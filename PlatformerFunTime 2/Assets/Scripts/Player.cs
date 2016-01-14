@@ -43,6 +43,8 @@ public class Player : MonoBehaviour {
 		//Testing
 		//WeaponController t = controller.WeaponCollision (this.transform.position);
 
+
+
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 		int wallDirX = (controller.collisions.left) ? -1 : 1;
 
@@ -74,6 +76,19 @@ public class Player : MonoBehaviour {
 			velocity.y = 0;
 		}
 
+		if (Input.GetKeyDown ("joystick button 3") || Input.GetKeyDown (KeyCode.E)) {
+			if (weapon != null){
+				weapon.Thrown();
+				weapon = null;
+			}else if (weapon == null){
+				weapon = controller.WeaponCollision(this.transform.position);
+				if (weapon != null){
+					weapon.Equipped(this);
+				}
+			}
+
+		}
+
 		if (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown("joystick button 0")) {
 			if (wallSliding){
 				if (wallDirX == input.x){
@@ -96,20 +111,10 @@ public class Player : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown ("joystick button 3") || Input.GetKeyDown (KeyCode.E)) {
-			if (weapon == null){
-				weapon = controller.WeaponCollision(this.transform.position);
-				if (weapon != null){
-					weapon.Equipped(this);
-				}
-			}
-			else{
-				weapon.Thrown();
-				weapon = null;
-			}
-		}
+
 
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move(velocity * Time.deltaTime);
 	}
+
 }

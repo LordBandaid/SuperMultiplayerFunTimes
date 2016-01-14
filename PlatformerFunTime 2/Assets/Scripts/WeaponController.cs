@@ -27,5 +27,6 @@ public class WeaponController : MonoBehaviour {
 	public void Thrown()
 	{
 		heldBy = null;
+		print ("Weapon X: " + this.transform.position.x + " || Weapon Y: " + this.transform.position.y);
 	}
 }
