@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharacterController.cs" />
      <Compile Include="Assets\Scripts\FollowCamera.cs" />
+     <Compile Include="Assets\Scripts\InputController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
  <Reference Include="UnityEngine.Networking">

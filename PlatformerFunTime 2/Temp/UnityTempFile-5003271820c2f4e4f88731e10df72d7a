@@ -78,6 +78,7 @@
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/CharacterController.cs'
 'Assets/Scripts/FollowCamera.cs'
+'Assets/Scripts/InputController.cs'
 'Assets/Scripts/Player.cs'
 'Assets/Scripts/WeaponController.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
